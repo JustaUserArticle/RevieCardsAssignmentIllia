@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Trivia Cards</title>
+    <style>
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.5); }
+            70% { transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e8ecef;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            font-size: 3rem;
+            margin-bottom: 40px;
+            animation: bounceIn 1.2s ease-out;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .card {
+            background-color: #ffffff;
+            height: 200px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        .term {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+            transition: transform 0.4s;
+        }
+
+        .description {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #27ae60;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            box-sizing: border-box;
+            transition: bottom 0.4s ease-in-out;
+        }
+
+        .card:hover .description {
+            bottom: 0;
+        }
+
+        .card:hover .term {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sports Essentials</h1>
+
+    <div class="grid">
+        <div class="card">
+            <div class="term">Soccer</div>
+            <div class="description" style="background-color: #2ecc71;">
+                <div class="icon">⚽</div>
+                <p>The most popular sport in the world, played with 11 players per team.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="term">Basketball</div>
+            <div class="description" style="background-color: #e67e22;">
+                <div class="icon">🏀</div>
+                <p>A game where two teams try to shoot a ball through a hoop.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="term">Tennis</div>
+            <div class="description" style="background-color: #d4d700; color: #333;">
+                <div class="icon">🎾</div>
+                <p>Played individually or in pairs using rackets to hit a ball over a net.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="term">Baseball</div>
+            <div class="description" style="background-color: #34495e;">
+                <div class="icon">⚾</div>
+                <p>A bat-and-ball game played between two opposing teams on a diamond.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="term">Swimming</div>
+            <div class="description" style="background-color: #3498db;">
+                <div class="icon">🏊</div>
+                <p>A water-based sport that tests speed and endurance across various strokes.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="term">Boxing</div>
+            <div class="description" style="background-color: #c0392b;">
+                <div class="icon">🥊</div>
+                <p>A combat sport in which two people throw punches at each other in a ring.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="term">Golf</div>
+            <div class="description" style="background-color: #27ae60;">
+                <div class="icon">⛳</div>
+                <p>Players use clubs to hit balls into a series of holes in as few strokes as possible.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="term">Volleyball</div>
+            <div class="description" style="background-color: #f1c40f; color: #333;">
+                <div class="icon">🏐</div>
+                <p>Teams use their hands to hit a ball back and forth over a high net.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
